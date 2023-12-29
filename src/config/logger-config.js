@@ -1,6 +1,6 @@
 const { createLogger, format, transports } = require('winston');
 const { combine, timestamp, label, printf } = format;
-const customFormat = printf(({ level, message, timestamp }) => {
+const customFormat = printf(({ level, message, timestamp,error }) => {
     return `${timestamp}  : ${level}: ${message}`;
   });
   const logger = createLogger({
