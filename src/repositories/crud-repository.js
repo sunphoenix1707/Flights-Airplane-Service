@@ -37,7 +37,7 @@ class CrudRepository {
             return response;
        
     }
-    async update(id , data) {
+    async update(data , id) {  /data-> { colvalue : "val"}/
         
             const model = await this.model.update(data , {
                 where: {
