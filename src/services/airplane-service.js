@@ -50,16 +50,22 @@ async function createAirplane(data) {
             throw new AppError('Cannot fetch data of  the airplane', StatusCodes.INTERNAL_SERVER_ERROR);
         }
     }
-    async function updateAirplane(data,id) {
-        try {
-            const response = await airplaneRepository.update(data.capacity, id);
-            return response;
-        } catch(error) {
-            if(error.statusCode == StatusCodes.NOT_FOUND) {
-                throw new AppError('The airplane you requested to update is not present', error.statusCode);
+    async function updateAirplane(data,id)
+    {
+          try{
+                 const response= await airplaneRepository.update(data,id);
+                 return response;
+          }
+          catch(error){
+    
+            if(error.statusCode==StatusCodes.NOT_FOUND)
+            {
+                   throw new AppError('The airplane you requested to update is not present ',error.statusCode);
             }
-            throw new AppError('Cannot fetch data of  the airplane', StatusCodes.INTERNAL_SERVER_ERROR);
-        }
+    
+            throw new AppError('Not able to fectch data of all the airplanes',StatusCodes.INTERNAL_SERVER_ERROR)
+    
+          }
     }
 module.exports = {
     createAirplane,
