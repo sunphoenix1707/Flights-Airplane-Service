@@ -83,7 +83,7 @@ async function destroyAirplane(req, res) {
     try{ 
 
          const airplanes = await AirplaneService.updateAirplane({
-            Capacity : req.body.Capacity
+            capacity : req.body.capacity
          },req.params.id);
          SuccessResponse.data = airplanes;
 

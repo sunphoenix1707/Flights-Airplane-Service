@@ -37,30 +37,13 @@ class CrudRepository {
             return response;
        
     }
-  async update(data,id) /*{data  -> {colvalue : "val"}*/  
-  {
-
-   
-    const response = await this.model.update(data,
-       {
-
-          where :{
-            id :id,
-          }
-       })
-        
-    
-
-       if(!response.id)
-       {
-         throw new AppError('Not able to find the resource ',StatusCodes.NOT_FOUND)
-       }
-
-
-         return response;
-    
-
-}
-
+    async update(id, data) { // data -> {col: value, ....}
+        const response = await this.model.update(data, {
+            where: {
+                id: id
+            }
+        })
+        return response;
+    }
 }
 module.exports = CrudRepository;
