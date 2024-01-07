@@ -37,13 +37,13 @@ class CrudRepository {
             return response;
        
     }
-    async update(id, data) { // data -> {col: value, ....}
+    async update(data, id) { // data -> {col: value, ....}
         const response = await this.model.update(data, {
-            where: {
-                id: id
-            }
+        where: {
+        id: id
+        }
         })
         return response;
-    }
+        }
 }
 module.exports = CrudRepository;
