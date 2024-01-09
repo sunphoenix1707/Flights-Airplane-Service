@@ -42,3 +42,7 @@ If you're setting up test or prod environment, make sure you also replace the ho
 To run the server execute
 
 npm run dev
+
+Some Screenshots:
+This screenshot is of complex join which has been performed to get the details of airport name , city name and airplane name.  
+![Screenshot (928)](https://github.com/sunphoenix1707/Flights-Airplane-Service/assets/114605699/d592fc65-4f72-4c59-8dc1-3b7789d62373)
